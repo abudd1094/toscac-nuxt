@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar :clipped-left="clipped" fixed app>
+    <v-app-bar app>
       <!-- <v-toolbar-title v-text="title" /> -->
       <v-spacer />
       <CustomAppbar />
@@ -10,7 +10,7 @@
         <nuxt />
       </v-container>
     </v-main>
-    <v-footer :absolute="!fixed" app>
+    <v-footer app>
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
   </v-app>
@@ -20,6 +20,8 @@
 import CustomAppbar from '../components/CustomAppbar'
 
 export default {
-  components: [CustomAppbar],
+  components: {
+    CustomAppbar,
+  },
 }
 </script>

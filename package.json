@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "compile:sass": "node-sass assets/main.scss assets/style.css -w",
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
@@ -15,6 +16,8 @@
     "@nuxtjs/strapi": "^0.1.8",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "fibers": "^5.0.0",
+    "node-sass": "^5.0.0",
     "nuxt": "^2.14.6"
   },
   "devDependencies": {
@@ -29,6 +32,7 @@
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-nuxt": "^1.0.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.2"
+    "prettier": "^2.1.2",
+    "sass-loader": "7.1.0"
   }
 }
