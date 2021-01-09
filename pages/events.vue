@@ -2,14 +2,13 @@
   <v-row>
     <v-col class="text-center">
       <div>Events</div>
-      <CustomButton />
+      <CustomButton title="click here" />
     </v-col>
   </v-row>
 </template>
 
 <script>
 import axios from 'axios'
-import CustomButton from '../components/CustomButton'
 
 export default {
   mounted() {
