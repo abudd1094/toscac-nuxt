@@ -1,13 +1,15 @@
 <template>
   <v-row>
     <v-col class="text-center">
-      <div>Hello</div>
+      <div>Events</div>
+      <CustomButton />
     </v-col>
   </v-row>
 </template>
 
 <script>
 import axios from 'axios'
+import CustomButton from '../components/CustomButton'
 
 export default {
   mounted() {
