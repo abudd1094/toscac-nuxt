@@ -1,7 +1,7 @@
 <template v-slot:extension>
   <v-tabs align-with-title>
-    <v-tab><nuxt-link to="/">Home</nuxt-link></v-tab>
-    <v-tab><nuxt-link to="/events">Events</nuxt-link></v-tab>
+    <v-tab nuxt to="/">Home</v-tab>
+    <v-tab nuxt to="/events">Events</v-tab>
   </v-tabs>
 </template>
 
