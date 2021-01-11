@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import CustomAppbar from '../components/CustomAppbar'
+import CustomAppbar from '../components/molecules/CustomAppbar'
 
 export default {
   components: {

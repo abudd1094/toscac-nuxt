@@ -1,30 +1,17 @@
 <template>
-  <div>
-    <v-row justify="center" align="center">
-      <v-col cols="12" sm="8" md="6">
-        <div class="text-center">
-          <img
-            id="logo"
-            src="../assets/media/images/toscac_logo.png"
-            alt="toscac logo"
-          />
-        </div>
-      </v-col>
-    </v-row>
-    <v-row justify="center" align="center">
-      <v-col cols="12" sm="12" md="12">
-        <h1>{{ headline }}</h1>
-        <p>{{ topText }}</p>
-        <p>{{ bottomText }}</p>
-      </v-col>
-    </v-row>
-  </div>
+  <v-row>
+    <v-col class="text-center">
+      <h1>{{ headline }}</h1>
+      <p>{{ topText }}</p>
+      <p v-if="bottomText">{{ bottomText }}</p>
+    </v-col>
+  </v-row>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import axios, { AxiosResponse } from 'axios'
-import { PagesResponse, pageNames } from '../types/strapiTypes'
+import { PagesResponse, pageNames } from '../../types/strapiTypes'
 
 export default Vue.extend({
   data: (): PagesResponse => {
@@ -34,7 +21,7 @@ export default Vue.extend({
       headline: '',
       id: 0,
       media: null,
-      pageName: pageNames.home,
+      pageName: pageNames.events,
       published_at: '',
       topText: '',
       updated_at: '',
@@ -43,14 +30,15 @@ export default Vue.extend({
   mounted() {
     this.$nextTick(() => {
       axios
-        .get('http://localhost:1337/pages?pageName=home')
+        .get('http://localhost:1337/pages?pageName=events')
         .then((res: AxiosResponse) => {
-          this.renderData(res.data[0])
+          // there should be one unique object in the array at index 0
+          this.localizeData(res.data[0])
         })
     })
   },
   methods: {
-    renderData(res: PagesResponse): void {
+    localizeData(res: PagesResponse): void {
       this.bottomText = res.bottomText
       this.created_at = res.created_at
       this.headline = res.headline
@@ -64,9 +52,3 @@ export default Vue.extend({
   },
 })
 </script>
-
-<style>
-#logo {
-  width: 20rem;
-}
-</style>
