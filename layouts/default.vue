@@ -10,18 +10,18 @@
         <nuxt />
       </v-container>
     </v-main>
-    <v-footer app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
+    <CustomFooter />
   </v-app>
 </template>
 
 <script>
 import CustomAppbar from '../components/molecules/CustomAppbar'
+import CustomFooter from '../components/molecules/CustomFooter'
 
 export default {
   components: {
     CustomAppbar,
+    CustomFooter,
   },
 }
 </script>
