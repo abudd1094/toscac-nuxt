@@ -13,6 +13,12 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  // Environment Variables
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    strapiDevUrl: 'http://localhost:1337',
+  },
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ['@/assets/scss/main.scss'],
 
@@ -57,5 +63,9 @@ export default {
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    extend(config) {
+      config.node = { fs: 'empty' }
+    },
+  },
 }

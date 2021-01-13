@@ -15,7 +15,7 @@
       <v-col cols="12" sm="12" md="12">
         <h1>{{ headline }}</h1>
         <p>{{ topText }}</p>
-        <CustomCarousel />
+        <custom-carousel :items="media"></custom-carousel>
         <p>{{ bottomText }}</p>
       </v-col>
     </v-row>
@@ -38,7 +38,7 @@ export default Vue.extend({
       created_at: '',
       headline: '',
       id: 0,
-      media: null,
+      media: [],
       pageName: pageNames.home,
       published_at: '',
       topText: '',
