@@ -1,5 +1,5 @@
 <template v-slot:extension>
-  <v-footer app>
+  <v-footer>
     <v-container>
       <v-row align="start" justify="space-between">
         <v-col justify="end">

@@ -1,22 +1,16 @@
 <template>
   <v-app>
-    <v-app-bar app>
-      <!-- <v-toolbar-title v-text="title" /> -->
-      <v-spacer />
-      <CustomAppbar />
-    </v-app-bar>
-    <v-main>
-      <v-container>
-        <nuxt />
-      </v-container>
+    <custom-appbar></custom-appbar>
+    <v-main class="user-margin-page">
+      <nuxt></nuxt>
     </v-main>
-    <CustomFooter />
+    <custom-footer></custom-footer>
   </v-app>
 </template>
 
 <script>
-import CustomAppbar from '../components/molecules/CustomAppbar'
-import CustomFooter from '../components/molecules/CustomFooter'
+import CustomAppbar from '../components/molecules/CustomAppbar.vue'
+import CustomFooter from '../components/molecules/CustomFooter.vue'
 
 export default {
   components: {

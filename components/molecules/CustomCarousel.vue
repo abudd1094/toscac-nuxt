@@ -1,5 +1,5 @@
 <template>
-  <v-carousel>
+  <v-carousel continuous cycle>
     <v-carousel-item
       v-for="(item, i) in items"
       :key="i"
@@ -14,17 +14,17 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  data: () => {
-    return {
-      sourceUrl: process.env.strapiDevUrl,
-    }
-  },
   props: {
     items: {
       type: Array,
       required: true,
       default: () => [],
     },
+  },
+  data: () => {
+    return {
+      sourceUrl: process.env.strapiDevUrl,
+    }
   },
 })
 </script>

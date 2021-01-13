@@ -12,10 +12,20 @@
       </v-col>
     </v-row>
     <v-row justify="center" align="center">
+      <h1>{{ headline }}</h1>
+    </v-row>
+    <v-row justify="center" align="center">
       <v-col cols="12" sm="12" md="12">
-        <h1>{{ headline }}</h1>
         <p>{{ topText }}</p>
+      </v-col>
+    </v-row>
+    <v-row justify="center" align="center">
+      <v-col cols="12" sm="6" md="6">
         <custom-carousel :items="media"></custom-carousel>
+      </v-col>
+    </v-row>
+    <v-row justify="center" align="center" class="bottom-text">
+      <v-col cols="12" sm="12" md="12">
         <p>{{ bottomText }}</p>
       </v-col>
     </v-row>

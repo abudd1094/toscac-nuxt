@@ -1,11 +1,15 @@
 <template>
-  <v-row>
-    <v-col class="text-center">
+  <div>
+    <v-row justify="center" align="start">
       <h1>{{ headline }}</h1>
-      <p>{{ topText }}</p>
-      <p v-if="bottomText">{{ bottomText }}</p>
-    </v-col>
-  </v-row>
+    </v-row>
+    <v-row justify="center" align="start">
+      <v-col cols="12" sm="12" md="12">
+        <p>{{ topText }}</p>
+      </v-col>
+    </v-row>
+    <v-divider></v-divider>
+  </div>
 </template>
 
 <script lang="ts">
