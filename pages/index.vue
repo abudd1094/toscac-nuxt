@@ -15,6 +15,7 @@
       <v-col cols="12" sm="12" md="12">
         <h1>{{ headline }}</h1>
         <p>{{ topText }}</p>
+        <CustomCarousel />
         <p>{{ bottomText }}</p>
       </v-col>
     </v-row>
@@ -25,8 +26,12 @@
 import Vue from 'vue'
 import axios, { AxiosResponse } from 'axios'
 import { PagesResponse, pageNames } from '../types/strapiTypes'
+import CustomCarousel from '../components/molecules/CustomCarousel.vue'
 
 export default Vue.extend({
+  components: {
+    CustomCarousel,
+  },
   data: (): PagesResponse => {
     return {
       bottomText: '',
