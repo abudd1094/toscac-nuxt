@@ -1,34 +1,39 @@
 <template>
   <div>
-    <v-row justify="center" align="center">
-      <v-col cols="12" sm="8" md="6">
-        <div class="text-center">
-          <img
-            id="logo"
-            src="../assets/media/images/toscac_logo.png"
-            alt="toscac logo"
-          />
-        </div>
-      </v-col>
-    </v-row>
-    <v-row justify="center" align="center">
-      <h1>{{ headline }}</h1>
-    </v-row>
-    <v-row justify="center" align="center">
-      <v-col cols="12" sm="12" md="12">
-        <p>{{ topText }}</p>
-      </v-col>
-    </v-row>
-    <v-row justify="center" align="center">
-      <v-col cols="12" sm="6" md="6">
-        <custom-carousel :items="media"></custom-carousel>
-      </v-col>
-    </v-row>
-    <v-row justify="center" align="center" class="bottom-text">
-      <v-col cols="12" sm="12" md="12">
-        <p>{{ bottomText }}</p>
-      </v-col>
-    </v-row>
+    <img
+      src="../assets/media/images/oth_goodhart.jpg"
+      alt="oth"
+      class="bg-top"
+    />
+    <div class="top">
+      <v-row justify="center" align="center" class="logo-container">
+        <img
+          class="logo-lg"
+          src="../assets/media/images/toscac_logo.png"
+          alt="toscac logo"
+        />
+      </v-row>
+    </div>
+    <div class="middle">
+      <v-row justify="center" align="center">
+        <h1>{{ headline }}</h1>
+      </v-row>
+      <!-- <v-row justify="center" align="center">
+        <v-col cols="12" sm="12" md="12">
+          <p>{{ topText }}</p>
+        </v-col>
+      </v-row>
+      <v-row justify="center" align="center">
+        <v-col cols="12" sm="6" md="6">
+          <custom-carousel :items="media"></custom-carousel>
+        </v-col>
+      </v-row>
+      <v-row justify="center" align="center" class="bottom-text">
+        <v-col cols="12" sm="12" md="12">
+          <p class="testClass">{{ bottomText }}</p>
+        </v-col>
+      </v-row> -->
+    </div>
   </div>
 </template>
 
@@ -36,12 +41,12 @@
 import Vue from 'vue'
 import axios, { AxiosResponse } from 'axios'
 import { PagesResponse, pageNames } from '../types/strapiTypes'
-import CustomCarousel from '../components/molecules/CustomCarousel.vue'
+// import CustomCarousel from '../components/molecules/CustomCarousel.vue'
 
 export default Vue.extend({
-  components: {
-    CustomCarousel,
-  },
+  // components: {
+  //   CustomCarousel,
+  // },
   data: (): PagesResponse => {
     return {
       bottomText: '',
@@ -81,7 +86,28 @@ export default Vue.extend({
 </script>
 
 <style>
-#logo {
-  width: 20rem;
+.theme--light.v-application {
+  background: transparent;
+}
+.bg-top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -10;
+}
+.top {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+  height: 100vh;
+  padding-top: 100px;
+}
+.middle {
+  background-color: rgba(255, 255, 255, 1);
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 </style>

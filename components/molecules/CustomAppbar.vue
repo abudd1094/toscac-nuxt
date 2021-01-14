@@ -1,10 +1,5 @@
 <template>
-  <v-tabs
-    id="devOverride"
-    centered
-    background-color="#F5F5F5"
-    class="user-margin-bottom"
-  >
+  <v-tabs id="devOverride" centered background-color="#F5F5F5">
     <v-tab nuxt to="/">Home</v-tab>
     <v-tab nuxt to="/events">Events</v-tab>
   </v-tabs>
