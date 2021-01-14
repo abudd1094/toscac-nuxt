@@ -153,10 +153,4 @@ li {
 .middle {
   background-color: rgb(245, 245, 245);
 }
-.padding-standard {
-  padding-left: 15%;
-  padding-right: 15%;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
 </style>
