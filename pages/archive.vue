@@ -40,7 +40,7 @@ export default Vue.extend({
       headline: '',
       id: 0,
       media: null,
-      pageName: pageNames.events,
+      pageName: pageNames.programs,
       posts: [],
       published_at: '',
       topText: '',
@@ -50,12 +50,12 @@ export default Vue.extend({
   mounted() {
     this.$nextTick(() => {
       axios
-        .get('http://localhost:1337/pages?pageName=events')
+        .get('http://localhost:1337/pages?pageName=archive')
         .then((res: AxiosResponse) => {
           this.renderPageData(res.data[0])
         })
       axios
-        .get('http://localhost:1337/posts?Type=event')
+        .get('http://localhost:1337/posts?Type=archive')
         .then((res: AxiosResponse) => {
           this.renderPosts(res.data)
         })
