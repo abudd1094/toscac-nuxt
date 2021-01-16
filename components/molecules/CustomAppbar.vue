@@ -3,6 +3,7 @@
     <v-tab nuxt to="/">Home</v-tab>
     <v-tab nuxt to="/events">Events</v-tab>
     <v-tab nuxt to="/programs">Programs</v-tab>
+    <v-tab nuxt to="/about">About Us</v-tab>
     <v-tab nuxt to="/archive">Archive</v-tab>
   </v-tabs>
 </template>

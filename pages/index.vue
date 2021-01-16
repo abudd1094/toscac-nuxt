@@ -35,48 +35,46 @@
       </v-row>
     </div>
     <div :class="['middle', 'padding-standard']">
-      <v-row justify="center" align="center">
-        <h1>Our current endeavors include:</h1>
+      <v-row justify="center">
+        <h1>Restoration of the Southeast Old Town Hall</h1>
       </v-row>
       <v-row>
-        <v-col>
-          <h3>Restoration of the Southeast Old Town Hall</h3>
-          <p>A historic landmark within the Village of Brewster</p>
-          <img
-            src="../assets/media/images/oth_old.jpg"
-            alt="oth old"
-            class="oth-old"
-          />
-        </v-col>
-        <v-col>
-          <h3>Operating Studio Around the Corner</h3>
-          <p>
-            A space in which we present our own cultural events and host events
-            by individual artists and other cultural organizations. We currently
-            have a long term lease both in the basement of the Old Town Hall,
-            which includes the Studio, and on the upper main floor, which houses
-            a beautiful theater space, an ideal venue for music concerts,
-            theater productions, dance performances, film screenings, lectures
-            and meetings. When the restoration is complete, we will expand
-            operations to encompass events in the theater as well as the Studio
-            Around the Corner. Together with the Southeast Museum, the middle
-            floor tenant, we aim to create a truly vibrant cultural hub that
-            will certainly foster the revitalization of downtown Brewster and
-            enrich the Town of Southeast and the surrounding communities.
-          </p>
-        </v-col>
+        <p>
+          Our primary mission is to restore this historic landmark within the
+          Village of Brewster, making it available as a cultural space for this
+          generation.
+        </p>
       </v-row>
-
-      <v-row justify="center" align="center">
-        <v-col cols="12" sm="6" md="6">
-          <custom-carousel :items="media"></custom-carousel>
-        </v-col>
+      <v-row justify="center">
+        <img
+          src="../assets/media/images/oth_old.jpg"
+          alt="oth old"
+          class="oth-old"
+      /></v-row>
+    </div>
+    <div :class="['middle-bottom', 'padding-standard']">
+      <v-row justify="center">
+        <h1>Operating Studio Around the Corner</h1>
       </v-row>
-      <v-row justify="center" align="center" class="bottom-text">
-        <v-col cols="12" sm="12" md="12">
-          <p class="testClass">{{ bottomText }}</p>
-        </v-col>
+      <v-row justify="center">
+        <p>
+          A space in which we present our own cultural events and host events by
+          individual artists and other cultural organizations. We currently have
+          a long term lease both in the basement of the Old Town Hall, which
+          includes the Studio, and on the upper main floor, which houses a
+          beautiful theater space, an ideal venue for music concerts, theater
+          productions, dance performances, film screenings, lectures and
+          meetings. When the restoration is complete, we will expand operations
+          to encompass events in the theater as well as the Studio Around the
+          Corner. Together with the Southeast Museum, the middle floor tenant,
+          we aim to create a truly vibrant cultural hub that will certainly
+          foster the revitalization of downtown Brewster and enrich the Town of
+          Southeast and the surrounding communities.
+        </p>
       </v-row>
+      <v-row justify="center"
+        ><custom-carousel :items="media"></custom-carousel
+      ></v-row>
     </div>
   </div>
 </template>
@@ -85,12 +83,12 @@
 import Vue from 'vue'
 import axios, { AxiosResponse } from 'axios'
 import { PagesResponse, pageNames } from '../types/strapiTypes'
-// import CustomCarousel from '../components/molecules/CustomCarousel.vue'
+import CustomCarousel from '../components/molecules/CustomCarousel.vue'
 
 export default Vue.extend({
-  // components: {
-  //   CustomCarousel,
-  // },
+  components: {
+    CustomCarousel,
+  },
   data: (): PagesResponse => {
     return {
       bottomText: '',
@@ -161,7 +159,10 @@ li {
 .middle {
   background-color: rgb(245, 245, 245);
 }
+.middle-bottom {
+  background-color: rgba(255, 255, 255, 1);
+}
 .oth-old {
-  width: 30vw;
+  width: 50vw;
 }
 </style>
