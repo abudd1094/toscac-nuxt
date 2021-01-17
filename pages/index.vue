@@ -32,6 +32,7 @@
           including lectures, theater, dance, film, music, visual arts, and
           inclusive community events.”
         </p>
+        <NuxtLink to="/about">Read more about us here</NuxtLink>
       </v-row>
     </div>
     <div :class="['middle', 'padding-standard']">
@@ -50,7 +51,8 @@
           src="../assets/media/images/oth_old.jpg"
           alt="oth old"
           class="oth-old"
-      /></v-row>
+        />
+      </v-row>
     </div>
     <div :class="['middle-bottom', 'padding-standard']">
       <v-row justify="center">
@@ -140,7 +142,7 @@ li {
   background: transparent;
 }
 .bg-top {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: -10;

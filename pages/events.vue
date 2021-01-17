@@ -1,22 +1,27 @@
 <template>
-  <div class="padding-standard">
-    <v-row justify="center" align="start">
-      <h1>{{ headline }}</h1>
-    </v-row>
-    <v-row justify="center" align="start">
-      <v-col cols="12" sm="12" md="12">
-        <p>{{ topText }}</p>
-      </v-col>
-    </v-row>
-    <v-divider></v-divider>
-    <div v-if="posts">
-      <div v-for="post in posts" :key="post.id">
-        <custom-post
-          :title="post.Title"
-          :description="post.Description"
-          :image="post.Image"
-          :type="post.Type"
-        ></custom-post>
+  <div>
+    <custom-tab-navigator
+      :links="[{ path: 'programs', title: 'Programs' }]"
+    ></custom-tab-navigator>
+    <div class="padding-standard">
+      <v-row justify="center" align="start">
+        <h1>{{ headline }}</h1>
+      </v-row>
+      <v-row justify="center" align="start">
+        <v-col cols="12" sm="12" md="12">
+          <p>{{ topText }}</p>
+        </v-col>
+      </v-row>
+      <v-divider></v-divider>
+      <div v-if="posts">
+        <div v-for="post in posts" :key="post.id">
+          <custom-post
+            :title="post.Title"
+            :description="post.Description"
+            :image="post.Image"
+            :type="post.Type"
+          ></custom-post>
+        </div>
       </div>
     </div>
   </div>
@@ -31,8 +36,12 @@ import {
   PostsResponse,
   PostsData,
 } from '../types/strapiTypes'
+import CustomTabNavigator from '../components/molecules/CustomTabNavigator.vue'
 
 export default Vue.extend({
+  components: {
+    CustomTabNavigator,
+  },
   data: (): PostsData => {
     return {
       bottomText: '',
